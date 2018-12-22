@@ -1,4 +1,6 @@
-var btnStart = $("<button>").attr({ "class": "btn btn-default" });
+var btnStart = $("<button>").attr({
+    "class": "btn btn-default"
+});
 var questionDiv = $("<h2>");
 var answerDiv = $("<p>")
 var initialTimer = 30;
@@ -126,7 +128,9 @@ window.onload = function() {
 
     answerDiv.html("<p>Hint: For a challenge, click the timer before starting the game!</p>" +
             "<p>Also, click the scoreboard labels to toggle its display between the current game score and overall score record</p>")
-        .attr({ "class": "msg" });
+        .attr({
+            "class": "msg"
+        });
     $("#content").append(btnStart, answerDiv);
 
 
@@ -200,7 +204,10 @@ function nextQuestion() {
 
     for (var i = 0; i < shuffledOptions.length; i++) {
         $("<button>")
-            .attr({ "class": "btn btn-default ansBtn", "value": shuffledOptions[i] })
+            .attr({
+                "class": "btn btn-default ansBtn",
+                "value": shuffledOptions[i]
+            })
             .text(shuffledOptions[i])
             .appendTo(answerDiv)
             .click(function() {
@@ -431,8 +438,12 @@ function gameOver() {
     }
 
 
-    btnStart.text("Play Again!").attr({ "id": "reset" })
-    $("#restart").append(btnStart, restartMessage).attr({ "class": "msg" })
+    btnStart.text("Play Again!").attr({
+        "id": "reset"
+    })
+    $("#restart").append(btnStart, restartMessage).attr({
+        "class": "msg"
+    })
 
     btnStart.on("click", function() {
         resetVar();
